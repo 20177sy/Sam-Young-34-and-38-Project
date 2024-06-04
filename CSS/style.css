@@ -63,6 +63,7 @@ body {
 		border-color: #8c9d8a;
 		border-style: solid solid none solid;
 		text-decoration: none;
+		color: #ecf3f1;
 	}
 	nav .active {
 		background-color: #8c9d8a;
@@ -102,5 +103,4 @@ body {
 
 /* CSS grid layout small screens */
 @media screen and (max-width:768px) {
-	
 }
