@@ -1,4 +1,166 @@
-html {
-  height: 100%;
-  width: 100%;
+html, body {
+	margin: 0px;
+	background-color: #ecf3f1;
+	height: 100%;
+	width: 100%;
+}
+
+/* CSS grid layout large screens */
+@media screen and (min-width:769px) {
+	.container {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto auto 1fr auto;
+	}
+	
+	#mobNav {
+		display: none;
+	}
+	main, footer {
+		padding: 10px;
+	}
+	
+	header {
+		height: 50px;
+		display: grid;
+		grid-template-columns: repeat(24, 1fr);
+		grid-template-rows: auto;
+		background-color: #1c210f;
+	}
+	header #title {
+		grid-column: 1 / span 4;
+		padding: 5px;
+		margin: 0px;
+		font-size: 30px;
+		color: #ecf3f1;
+		background-color: #1c210f;
+		border-style: none;
+	}
+	header a {
+		background-color: #51624f;
+		border-radius: 15px;
+		text-decoration: none;
+		border-width: 1px 1px 1px 1px;
+		border-color: #8c9d8a;
+		border-style: solid solid solid solid;
+	}
+	header #profile {
+		grid-column: 22 / span 2;
+	}
+	header #lang {
+		grid-column: 24;
+	}
+
+	nav {
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 50px auto;
+		background-color: #1c210f;
+	}
+	nav a {
+		grid-row: 1;
+		padding: 10px;
+		margin: 0px;
+		background-color: #51624f;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		border-width: 1px 1px 0px 1px;
+		border-color: #8c9d8a;
+		border-style: solid solid none solid;
+		text-decoration: none;
+		color: #ecf3f1;
+	}
+	nav .active {
+		background-color: #8c9d8a;
+	}
+	nav .spacer {
+		border-style: none;
+		background-color: #1c210f;
+	}
+	#subnav {
+		grid-row: 2;
+		grid-column: 1 / span 6;
+		display: grid;
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 10px 50px;
+		background-color: #8c9d8a;
+	}
+	#subnav a {
+		grid-row: 2;
+		padding: 10px;
+		margin: 0px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		text-decoration: none;
+	}
+	#subnav .active {
+		background-color: #ecf3f1;
+	}
+
+	main {
+		grid-row: 3;
+	}
+
+	footer {
+		height: 100px;
+		grid-row: 4;
+		background-color: #1c210f;
+	}
+}
+
+/* CSS grid layout small screens */
+@media screen and (max-width:768px) {
+	.container {
+		min-height: 100%;
+		display: grid;
+		grid-template-columns: 50px auto 50px;
+		grid-template-rows: auto 1fr auto;
+	}
+	#mobNavPage {
+		background-color: #1c210f;
+	}
+	
+	nav, #subnav, #lang, #profile {
+		display: none;
+	}
+
+	header {
+		grid-column: 1 / span 3;
+		grid-row: 1;
+		height: 50px;
+		width: 100%;
+		background-color: #1c210f;
+		color: #ecf3f1;
+		display: grid;
+		grid-template-columns: 1fr 50px;
+		grid-template-rows: 50px;
+	}
+	header a {
+		font-size: 40px;
+		color: #ecf3f1;
+		text-decoration: none;
+	}
+	#mobNav {
+		display: block;
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	main {
+		grid-column: 2;
+		grid-row: 2;
+		grid-template-rows: 75px 75px 75px 75px 75px 75px 75px;
+		padding: 10px;
+	}
+	#mobNavMenu {
+		
+	}
+
+	footer {
+		grid-column: 1 / span 3;
+		grid-row: 3;
+		height: 50px;
+		background-color: #1c210f;
+		color: #ecf3f1;
+	}
 }
