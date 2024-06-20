@@ -6,15 +6,29 @@
   <meta name="viewport" content="width=device-width">
   <title>Hope Cafe</title>
   <link href="/CSS/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/88b27ca1cc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 
 <body id="mobNavPage" class="container">
-  <header>
-    <a id="mobNav" onclick="history.back()">X</a>
+  <header id="headerMobNav">
+    <a id="a_mobNav" class="fas fa-xmark" onclick="history.back()"></a>
   </header>
 
   <main id="mobNavMenu">
-    
+    <a href="/index.html">Home</a>
+    <a href="/HTML/Menu/menu.html">Menu</a>
+    <a href="/HTML/about.html">About</a>
+    <a id="b_login" href="login.html">
+      <i class="fas fa-right-to-bracket"></i>
+      Log in
+    </a>
+    <a href="/HTML/profile.html">
+      <i class="fa-solid fa-circle-user"></i>
+      Profile
+    </a>
   </main>
 </body>
 
