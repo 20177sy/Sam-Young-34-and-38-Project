@@ -61,14 +61,10 @@ html, body {
 		background-color: #ecf3f1;
 		border-style: none;
 	}
-	#a_profile, #a_lang {
+	#a_lang {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-	#a_profile {
-		grid-column: 15;
-		text-align: center;
 	}
 	#a_lang {
 		grid-column: 16;
