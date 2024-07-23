@@ -8,8 +8,6 @@ html, body {
 	font-style: normal;
 }
 
-/* Both Large and Small screens */
-
 
 /* CSS grid layout large screens */
 @media screen and (min-width:769px) {
@@ -17,6 +15,7 @@ html, body {
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-rows: auto auto auto auto 1fr auto;
+		align-items: start;
 	}
 	
 	#a_mobNav {
@@ -31,60 +30,42 @@ html, body {
 		grid-row: 1;
 		height: 50px;
 		display: grid;
-		grid-template-columns: 1fr 4fr 1fr;
+		grid-template-columns: 6fr 4fr 6fr;
 		grid-template-rows: 50px;
-	}
-	#headerContent {
-		grid-column: 2;
-		grid-row: 1;
-		display: grid;
-		grid-template-columns: repeat(16, 1fr);
-		grid-template-rows: 50px;
-	}
-	
-	header a {
-		background-color: #ACD7EC;
-		margin: 0px;
-		font-size: 20px;
-		border-radius: 15px;
-		text-decoration: none;
-	}
-	header a:hover{
-		cursor: pointer;
 	}
 	#a_title {
-		grid-column: 1 / span 4;
+		grid-column: 2;
 		padding: 5px;
 		font-size: 30px;
 		text-align: center;
 		color: #478978;
-		background-color: #ecf3f1;
-		border-style: none;
+		text-decoration: none;
 	}
-	#a_lang {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		grid-column: 16;
-		text-align: center;
+	#a_title:hover{
+		cursor: pointer;
 	}
 
 	nav {
 		grid-column: 1 / span 3;
 		grid-row: 2;
+		top: 0;
+		position: sticky;
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-rows: auto;
 		background-color: #478978;
 	}
+	#navSiteMap {
+		height: 10px;
+	}
 	#navContent {
 		grid-column: 2;
 		grid-row: 1;
 		display: grid;
-		grid-template-columns: repeat(8, 1fr);
+		grid-template-columns: 2fr 1fr 1fr 1fr 1fr 2fr;
 		grid-template-rows: 50px auto;
 	}
-	nav a {
+	.b_nav {
 		grid-row: 1;
 		padding: 5px;
 		margin: 0px;
@@ -94,8 +75,18 @@ html, body {
 		align-items: center;
 		justify-content: center;
 		color: black;
-		background-color: #ACD7EC;
+		background-color: #acecdc;
 		border: 1px solid #478978;
+	}
+	#b_lang {
+		font-size: 24px;
+		display: flex;
+		justify-content: center;
+	}
+	#navSpacer {
+		grid-row: 1;
+		grid-column: 1;
+		background-color: #478978;
 	}
 	.nav_leftEnd {
 		border-top-left-radius: 15px;
@@ -105,18 +96,21 @@ html, body {
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
 	}
-	nav a:hover{
+	nav a:hover {
 		cursor: pointer;
+		background-color: #f4693e;
 	}
-	nav .active {
-		background-color: #84DCC6;
-		
-	}
-	#navSpacer {
-		grid-column: 4 / 8;
+	#navSpacer:hover {
 		cursor: default;
-		border-style: none;
-		background-color: #478978;
+	}
+	nav #active {
+		background-color: #fe3b01;
+	}
+	nav #active:hover {
+		cursor: default;
+	}
+	nav #active.middle {
+		border-bottom-color: #fe3b01;
 	}
 	
 	#subnav {
@@ -125,13 +119,14 @@ html, body {
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-rows: auto;
-		background-color: #84DCC6;
+		background-color: #fe3b01;
+		border-radius: 0px 0px 15px 15px;
 	}
 	#subNavContent {
 		grid-column: 2;
 		grid-row: 1;
 		display: grid;
-		grid-template-columns: repeat(6, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		grid-template-rows: 10px 50px;
 	}
 	#subnav a {
@@ -141,9 +136,18 @@ html, body {
 		border-top-left-radius: 15px;
 		border-top-right-radius: 15px;
 		text-decoration: none;
-		border-color: #84DCC6;
+		text-align: center;
+		color: black;
+		background-color: #acecdc;
+		border-color: #fe3b01;
+		border-style: solid;
+		border-width: 1px 1px 0px 1px;
 	}
-	#subnav .active {
+	#subnav a:hover {
+		background-color: #e3e3e3;
+		cursor: pointer;
+	}
+	#subNavContent #active {
 		background-color: #ecf3f1;
 	}
 
@@ -167,6 +171,7 @@ html, body {
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-rows: 100px;
+		border-radius: 15px 15px 0px 0px;
 	}
 	#footerContent {
 		grid-column: 2;
@@ -189,7 +194,7 @@ html, body {
 		background-color: #478978;
 	}
 	
-	nav, #subnav, #a_lang, #a_profile {
+	nav, #subnav {
 		display: none;
 	}
 
@@ -198,16 +203,14 @@ html, body {
 		grid-row: 1;
 		height: 75px;
 		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 75px;
+		grid-template-rows: 75px;
 		background-color: #478978;
 		border-bottom-left-radius: 15px;
 		border-bottom-right-radius: 15px;
 		border-bottom: 10px solid #84DCC6;
 		color: #ecf3f1;
-	}
-	#headerContent {
-		display: grid;
-		grid-template-columns: 1fr 75px;
-		grid-template-rows: 75px;
 	}
 	header a {
 		font-size: 50px;

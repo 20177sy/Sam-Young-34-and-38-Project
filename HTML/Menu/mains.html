@@ -10,37 +10,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <script src="/JS/script.js"></script>
+  <script src="/JS/Firebase/fbm_firebase.js"></script>
 </head>
 
 <body class="container">
   <header>
-    <div id="headerContent">
-      <a id="a_title" href="/index.html">Hope Cafe</a>
-      <a id="a_lang" class="fas fa-globe"></a>
-      <a id="a_mobNav" class="fas fa-bars" href="/HTML/mobNav.html"></a>
-    </div>
+    <a id="a_title" href="/index.html">Hope Cafe</a>
+    <a id="a_mobNav" class="fas fa-bars" href="/HTML/mobNav.html"></a>
   </header>
 
   <nav>
     <div id="navContent">
-      <a href="/HTML/Menu/mains.html">Menu</a>
-      <a href="/HTML/about.html">About</a>
-      <a href="/HTML/profile.html">
-        <i class="fas fa-circle-user" ></i>
-        Profile
-      </a>
       <a id="navSpacer"></a>
-    <a href="/HTML/cart.html">Cart</a>
+      <a class="b_nav nav_leftEnd" href="/HTML/about.html">About</a>
+      <a id="active" class="b_nav middle">Menu</a>
+      <a class="b_nav middle" onclick="signinCheck()">
+        <i class="fas fa-circle-user"></i>
+        User
+      </a>
+      <a class="b_nav nav_rightEnd" href="/HTML/cart.html">
+        <i class="fas fa-cart-shopping"></i>
+        Cart
+      </a>
+    </div>
   </nav>
 
-  <div id="subNavContent">
-    <div id="subnav">
-      <a>blah</a>
-      <a></a>
-      <a></a>
-      <a></a>
-      <a></a>
-      <a></a>
+  <div id="subnav">
+    <div id="subNavContent">
+      <a id="active">Mains</a>
+      <a href="/HTML/Menu/sides.html">Sides</a>
+      <a href="/HTML/Menu/dessert.html">Desserts</a>
+      <a href="/HTML/Menu/kids.html">Kids</a>
+      <a href="/HTML/Menu/drinks.html">Drinks</a>
     </div>
   </div>
 
@@ -49,7 +51,9 @@
   </main>
 
   <footer>
-    
+    <div id="footerContent">
+      <a href="/HTML/sitemap.html">Site Map</a>
+    </div>
   </footer>
 </body>
 
