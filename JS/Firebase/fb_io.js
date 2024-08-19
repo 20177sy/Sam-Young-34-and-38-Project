@@ -1,6 +1,6 @@
 /**************************************************************/
 // fb_io.js
-// Written by Sam Young   2023
+// Written by Sam Young   2024
 // v1 firebase DB testing write AND read to firebase
 // v2 add Google login
 // v2 use pop up for login

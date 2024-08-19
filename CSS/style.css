@@ -83,6 +83,10 @@ html, body {
 		display: flex;
 		justify-content: center;
 	}
+	.b_nav:hover {
+		cursor: pointer;
+		box-shadow: inset 0px 0px 5px 5px rgba(0,0,0,0.2);
+	}
 	#navSpacer {
 		grid-row: 1;
 		grid-column: 1;
@@ -96,10 +100,7 @@ html, body {
 		border-top-right-radius: 15px;
 		border-bottom-right-radius: 15px;
 	}
-	nav a:hover {
-		cursor: pointer;
-		background-color: #f4693e;
-	}
+	
 	#navSpacer:hover {
 		cursor: default;
 	}
@@ -162,6 +163,9 @@ html, body {
 		grid-column: 2;
 		grid-row: 5;
 	}
+	main h1 {
+		text-align: center;
+	}
 
 	footer {
 		grid-column: 1 / span 3;
@@ -170,15 +174,22 @@ html, body {
 		background-color: #478978;
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
-		grid-template-rows: 100px;
+		grid-template-rows: 5px 90px 5px;
 		border-radius: 15px 15px 0px 0px;
 	}
 	#footerContent {
 		grid-column: 2;
-		grid-row: 1;
+		grid-row: 2;
 		display: grid;
-		grid-template-columns: 1fr;
-		grid-template-rows: 100px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 18px 18px 18px 18px 18px;
+	}
+	#footerContent a {
+		text-decoration: none;
+		color: #ecf3f1;
+	}
+	#footerContent a:hover {
+		color: #7affff;
 	}
 }
 
@@ -242,7 +253,6 @@ html, body {
 		grid-column: 2;
 		grid-row: 3;
 		padding: 10px;
-		height: 100%;
 	}
 	#mobNavMenu {
 		margin: 0px;
@@ -264,12 +274,26 @@ html, body {
 	footer {
 		grid-column: 1 / span 3;
 		grid-row: 4;
+		display: grid;
+		grid-template-columns: 10px 1fr 10px;
+		grid-template-rows: 1px 72px 2px;
 		height: 75px;
 		width: 100%;
 		background-color: #478978;
 		border-top-left-radius: 15px;
 		border-top-right-radius: 15px;
 		border-top: 10px solid #84DCC6;
+		color: #ecf3f1;
+	}
+	#footerContent {
+		grid-column: 2;
+		grid-row: 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: 18px 18px 18px 18px;
+	}
+	#footerContent a {
+		text-decoration: none;
 		color: #ecf3f1;
 	}
 }

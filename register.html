@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Hope Cafe</title>
+	<meta name="description" content="Hope Cafe, Lower Hutt">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="Sam Young">
+	<link href="/CSS/style.css" rel="stylesheet" type="text/css" />
+	<script src="https://kit.fontawesome.com/88b27ca1cc.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+	<!-- firebase start ****************************************-->
+	<link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+	<!-- Firebase App (core Firebase SDK) always required & must be listed 1st -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>  
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>  
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script> 
+	<!-- firebase end ******************************************-->
+
+	<script src="/JS/regPage.js"></script>
+	<script src="/JS/Firebase/fbm_firebase.js"></script>
+	<script src="/JS/Firebase/fb_io.js"></script>
+</head>
+
+<body class="container" onload="fbm_initialise();">
+	<header>
+		<a id="a_title">Hope Cafe</a></a>
+	</header>
+
+	<nav>
+		<div id="navSiteMap"></div>
+	</nav>
+
+	<main>
+		<form>
+			<p class="">
+				<label>Name</label> 
+				<input id="reg_name" class="" type="text" required>
+			</p>
+			
+			<p class="">
+				<label>Age</label> 
+				<input id="reg_age" class="" type="number" min="10" max="100" required>
+			</p>
+			
+			<p class="">
+				<label>Phone Number</label>
+				<input id="reg_phNumber" class="" type="number" maxlength="9" required>
+			</p>
+		</form>
+		<p id="p_regFail">No Errors</p>
+		<button class="" onclick="regContinue();">continue</button>
+	</main>
+
+	<footer>
+		<div id="footerContent">
+			<a href="sitemap.html">Site Map</a>
+		</div>
+	</footer>
+</body>
+
+</html>

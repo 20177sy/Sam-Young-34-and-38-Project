@@ -11,7 +11,7 @@ console.log('%c' + MODULENAME + ': ', 'color: blue;');
 
 /*dbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdb*/
 // database variables
-const DETAILS = "userProfile";
+const PROFILE = "userProfile";
 const ADMIN = "admin";
 
 var loginStatus = ' ';
@@ -30,7 +30,9 @@ var userProfile = {
 var admin = {
 	uid:		'',
 	admin:	''
-}
+};
+
+var dbData = {};
 /*dbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdb*/
 
 /**************************************************************/
@@ -65,7 +67,7 @@ function fbm_initialise() {
 
 /**************************************************************/
 // fbm_procLogin(_loginStatus, _user, _save)
-// Processes and save the user details
+// Processes and save the user PROFILE
 // Input:  Recieved data and where to store it
 // Return:
 /**************************************************************/
@@ -80,10 +82,42 @@ function fbm_procLogin(_loginStatus, _user, _save) {
 
 	if (_loginStatus == 'logged in' || _loginStatus == 'logged in via popup') {
 		console.log('%clogin success', 'color: green;');
-		fb_readRec(DETAILS, userDetails.uid, userDetails, fbm_registerCheck);
+		fb_readRec(PROFILE, userProfile.uid, userProfile, fbm_registerCheck);
 
 	} else {
 		console.log('%clogin failure', 'color: red;');
+	}
+}
+
+/**************************************************************/
+// fbm_registerCheck(_snapshot, _data)
+// checks for user in firebase, moves to new page depending on the answer
+// Input:  Recieved data and where to store it
+// Return:
+/**************************************************************/
+function fbm_registerCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_registerCheck:', 'color: brown;');
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else if (_snapshot.val() == null) {
+		console.log(sessionStorage.getItem('UID'));
+		fb_readRec('admin', sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
+		window.location.replace("/HTML/register.html");
+	} else {
+		fb_readRec(ADMIN, sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
+		window.location.replace("/HTML/profile.html");
+	}
+}
+
+
+function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_adminCheck:', 'color: brown;');
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else if (_snapshot.val() == true) {
+		
 	}
 }
 

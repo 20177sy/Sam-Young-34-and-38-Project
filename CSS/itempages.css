@@ -1,0 +1,29 @@
+/* CSS for Large Screens */
+@media screen and (min-width:769px) {
+	main {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-gap: 10px;
+	}
+	
+	.b_itemButton {
+		background-color: blue;
+	}
+}
+
+/* CSS for Small Screens */
+@media screen and (max-width:768px) {
+	main {
+		display: grid;
+		grid-template-columns: 0.5fr;
+		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		grid-gap: 10px;
+		justify-content: center;
+	}
+
+	.b_itemButton {
+		
+		background-color: blue;
+	}
+}

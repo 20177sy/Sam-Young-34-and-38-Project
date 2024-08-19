@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Hope Cafe</title>
+  <link href="/CSS/style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/88b27ca1cc.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- firebase start ****************************************-->
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <!-- Firebase App (core Firebase SDK) always required & must be listed 1st -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-app.js"></script>  
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-auth.js"></script>  
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.2/firebase-analytics.js"></script> 
+  <!-- firebase end ******************************************-->
+
+  <script src="/JS/script.js"></script>
+  <script src="/JS/Firebase/fbm_firebase.js"></script>
+  <script src="/JS/Firebase/fb_io.js"></script>
+</head>
+
+<body id="mobNavPage" class="container"  onload="fbm_initialise();">
+  <header id="headerMobNav">
+    <a id="a_mobNav" class="fas fa-xmark" onclick="history.back()"></a>
+  </header>
+
+  <main id="mobNavMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a onclick="signinCheck();">
+      <i class="fa-solid fa-circle-user"></i>
+      User
+    </a>
+  </main>
+</body>
+
+</html>
