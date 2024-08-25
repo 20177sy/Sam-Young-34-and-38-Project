@@ -109,6 +109,7 @@ html, body {
 	}
 	nav #active:hover {
 		cursor: default;
+		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
 	}
 	nav #active.middle {
 		border-bottom-color: #fe3b01;
@@ -295,5 +296,10 @@ html, body {
 	#footerContent a {
 		text-decoration: none;
 		color: #ecf3f1;
+	}
+	#footerMobNav {
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-top: 0px none #ffffff;
 	}
 }

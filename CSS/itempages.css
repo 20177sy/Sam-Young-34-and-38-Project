@@ -3,12 +3,24 @@
 	main {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-		grid-template-rows: 1fr;
-		grid-gap: 10px;
+		grid-template-rows: auto;
+		grid-gap: 15px;
 	}
 	
 	.b_itemButton {
-		background-color: blue;
+		background-color: white;
+		text-decoration: none;
+	}
+	.b_itemButton:hover {
+		box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.2);
+	}
+	.b_itemButton img {
+		padding: 5px;
+	}
+	.b_itemButton p {
+		width: 100%;
+		text-align: center;
+		color: #478978;
 	}
 }
 
@@ -16,14 +28,23 @@
 @media screen and (max-width:768px) {
 	main {
 		display: grid;
-		grid-template-columns: 0.5fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: auto;
+		grid-template-rows: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr;
 		grid-gap: 10px;
 		justify-content: center;
 	}
 
 	.b_itemButton {
-		
-		background-color: blue;
+		background-color: white;
+		text-decoration: none;
+	}
+	
+	.b_itemButton img {
+		padding: 5px;
+	}
+	.b_itemButton p {
+		width: 100%;
+		text-align: center;
+		color: #478978;
 	}
 }
