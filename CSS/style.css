@@ -105,14 +105,15 @@ html, body {
 		cursor: default;
 	}
 	nav #active {
-		background-color: #fe3b01;
+		background-color: #478978;
+		color: #ecf3f1;
 	}
 	nav #active:hover {
 		cursor: default;
 		box-shadow: inset 0px 0px 0px 0px rgba(0,0,0,0);
 	}
 	nav #active.middle {
-		border-bottom-color: #fe3b01;
+		border-bottom-color: #478978;
 	}
 	
 	#subnav {
@@ -121,7 +122,7 @@ html, body {
 		display: grid;
 		grid-template-columns: 1fr 4fr 1fr;
 		grid-template-rows: auto;
-		background-color: #fe3b01;
+		background-color: #478978;
 		border-radius: 0px 0px 15px 15px;
 	}
 	#subNavContent {
@@ -141,7 +142,7 @@ html, body {
 		text-align: center;
 		color: black;
 		background-color: #acecdc;
-		border-color: #fe3b01;
+		border-color: #478978;
 		border-style: solid;
 		border-width: 1px 1px 0px 1px;
 	}

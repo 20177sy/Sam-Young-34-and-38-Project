@@ -13,6 +13,7 @@ console.log('%c' + MODULENAME + ': ', 'color: blue;');
 // database variables
 const PROFILE = "userProfile";
 const ADMIN = "admin";
+const MENU = "menuItems"
 
 var loginStatus = ' ';
 var readStatus  = ' ';
@@ -31,6 +32,14 @@ var admin = {
 	uid:		'',
 	admin:	''
 };
+
+var menuItem = {
+	algy:		'',
+	desc:		'',
+	ingr:		'',
+	name:		'',
+	price:	'',
+}
 
 var dbData = {};
 /*dbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdbdb*/
@@ -118,6 +127,34 @@ function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
 		alert('Read Record Error, Check Console.');
 	} else if (_snapshot.val() == true) {
 		
+	}
+}
+
+/**************************************************************/
+// fbm_menuItemCheck(_snapshot, _data)
+// checks for menu item in firebase, moves to new page depending on the answer
+// Input:  Recieved data and where to store it
+// Return:
+/**************************************************************/
+function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_menuItemCheck:', 'color: brown;');
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else {
+		console.log('%cfbm_menuItemCheck: Success', 'color: green;');
+		menuItemProcessing(_snapshot, _data);
+	}
+}
+
+
+function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_adminCheck:', 'color: brown;');
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else if (_snapshot.val() == true) {
+
 	}
 }
 

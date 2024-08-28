@@ -28,9 +28,10 @@
 	<script src="/JS/script.js"></script>
 	<script src="/JS/Firebase/fbm_firebase.js"></script>
 	<script src="/JS/Firebase/fb_io.js"></script>
+	<script src=/JS/itemPages.js></script>
 </head>
 
-<body class="container" onload="fbm_initialise();">
+<body class="container" onload="fbm_initialise(); menuItemRead('main1');">
 	<header>
 		<a id="a_title" href="index.html">Hope Cafe</a>
 		<a id="a_mobNav" class="fas fa-bars" href="mobNav.html"></a>
@@ -40,8 +41,8 @@
 		<div id="navContent">
 			<a id="navSpacer"></a>
 			<a class="b_nav nav_leftEnd" href="about.html">About</a>
-			<a id="active" class="b_nav" href="mains.html">Menu</a>
-			<a class="b_nav" onclick="signinCheck();">
+			<a id="active" class="b_nav middle" href="mains.html">Menu</a>
+			<a class="b_nav middle" onclick="signinCheck();">
 				<i class="fas fa-circle-user"></i>
 				User
 			</a>
@@ -52,8 +53,34 @@
 		</div>
 	</nav>
 
-	<main>
-		
+	<div id="subnav">
+		<div id="subNavContent">
+			<a id="active">Mains</a>
+			<a href="sides.html">Sides</a>
+			<a href="dessert.html">Desserts</a>
+			<a href="kids.html">Kids</a>
+			<a href="drinks.html">Drinks</a>
+		</div>
+	</div>
+
+	<main class="itemPage">
+		<p class="siteTree"><a href="index.html">Home</a> / <a href="mains.html">Mains</a> / Main 1</p>
+		<div class="itemPageContent">
+			<div class="itemImage">
+				<img src="/Content/Images/curry.jpg">
+			</div>
+			<div class="itemPurchase">
+
+			</div>
+			<div class="itemInfo">
+				<h3>Description</h3>
+				<p id="p_main1Description">hello</p>
+				<h3>Allergens</h3>
+				<p id="p_main1Allergens"></p>
+				<h3>Ingredients</h3>
+				<p id="p_main1Ingredients"></p>
+			</div>
+		</div>
 	</main>
 
 	<footer>

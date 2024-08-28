@@ -22,6 +22,59 @@
 		text-align: center;
 		color: #478978;
 	}
+
+	.itemPage{
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 30px auto;
+		grid-gap: 0px;
+	}
+	
+	.siteTree {
+		grid-column: 1;
+		grid-row: 1;
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+	.siteTree a {
+		text-decoration: none;
+		color: black;
+	}
+	.siteTree a:hover {
+		text-decoration: underline;
+	}
+
+	.itemPageContent {
+		grid-column: 1;
+		grid-row: 2;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
+		grid-template-rows: auto auto;
+		background-color: white;
+		border: 2px solid #478978;
+	}
+	
+	.itemImage {
+		grid-column: 1;
+		grid-row: 1;
+		padding: 15px;
+	}
+	.itemImage img {
+		width: 100%;
+		border: 5px solid #478978;
+	}
+
+	.itemPurchase {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.itemInfo {
+		grid-column: 1 / span 2;
+		grid-row: 2;
+		background-color: white;
+		padding: 15px;
+	}
 }
 
 /* CSS for Small Screens */
@@ -46,5 +99,18 @@
 		width: 100%;
 		text-align: center;
 		color: #478978;
+	}
+
+	.itemPageContent {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
+	.itemPageContent img {
+		width: 50%;
+		justify-self: center;
+	}
+	.siteTree {
+		display: none;
 	}
 }
