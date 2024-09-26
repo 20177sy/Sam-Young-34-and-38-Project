@@ -40,11 +40,22 @@ function menuItemAddToCart() {
 	alert("This operation is currently not available.");
 }
 
-function menuItemAddToFavourite() {
+function menuItemAddToFavourite(_itemType, _item) {
 	console.log('%cmenuItemAddToCart:', 'color: brown;');
 	if (menuItemFav == "login") {
 		alert("You must be logged in to use this function.");
 	} else if (menuItemFav == "added") {
-		alert("You must be logged in to use this function.");
+		sessionStorage.setItem(_itemType, _item);
+		userProfile.name = sessionStorage.getItem('NAME');
+		userProfile.age = sessionStorage.getItem('AGE');
+		userProfile.phNumber = sessionStorage.getItem('PHNUMBER');
+		userProfile.uid = sessionStorage.getItem('UID');
+		userProfile.email = sessionStorage.getItem('EMAIL');
+		userProfile.favMain = sessionStorage.getItem('MAIN');
+		userProfile.favSide = sessionStorage.getItem('SIDE');
+		userProfile.favDessert = sessionStorage.getItem('DESSERT');
+		userProfile.favDrink = sessionStorage.getItem('DRINK');
+		fb_writeRec(PROFILE, sessionStorage.getItem('UID'), userProfile);
+		alert("You have favourited this item.");
 	}
 }

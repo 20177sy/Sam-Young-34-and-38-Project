@@ -39,7 +39,9 @@ function regContinue() {
 			userProfile.email = sessionStorage.getItem('EMAIL');
 			admin.uid = sessionStorage.getItem('UID');
 			admin.admin = 'false';
-			sessionStorage.setItem('name', userProfile.name);
+			sessionStorage.setItem('NAME', userProfile.name);
+			sessionStorage.setItem('AGE', userProfile.age);
+			sessionStorage.setItem('PHNUMBER', userProfile.phNumber);
 			sessionStorage.setItem('admin', admin.admin);
 			fb_writeRec(PROFILE, sessionStorage.getItem('UID'), userProfile);
 			fb_writeRec(ADMIN, sessionStorage.getItem('UID'), admin);

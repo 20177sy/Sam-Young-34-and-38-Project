@@ -20,24 +20,27 @@ var readStatus  = ' ';
 var writeStatus = ' ';
 
 var userProfile = {
-	uid:    		  '',
-	email:   			'',
-	name:					'',
-	age:					'',
-	phNumber:			'',
-	savedOrder:		''
+	uid:    		'',
+	email:   		'',
+	name:			'',
+	age:			'',
+	phNumber:		'',
+	favMain:		'',
+	favSide:		'',
+	favDessert:		'',
+	favDrink:		''
 };
 
 var admin = {
-	uid:		'',
+	uid:	'',
 	admin:	''
 };
 
 var menuItem = {
-	algy:		'',
-	desc:		'',
-	ingr:		'',
-	name:		'',
+	algy:	'',
+	desc:	'',
+	ingr:	'',
+	name:	'',
 	price:	'',
 }
 
@@ -88,6 +91,10 @@ function fbm_procLogin(_loginStatus, _user, _save) {
 	sessionStorage.setItem('NAME', _user.displayName);
 	sessionStorage.setItem('EMAIL', _user.email);
 	sessionStorage.setItem('PHOTO', _user.photoURL);
+	sessionStorage.setItem('MAIN', _user.favMain);
+	sessionStorage.setItem('SIDE', _user.favSide);
+	sessionStorage.setItem('DESSERT', _user.favDessert);
+	sessionStorage.setItem('DRINK', _user.favDrink);
 
 	if (_loginStatus == 'logged in' || _loginStatus == 'logged in via popup') {
 		console.log('%clogin success', 'color: green;');
@@ -144,7 +151,7 @@ function fbm_menuItemRegisterCheck(_readStatus, _snapshot, _data, _error) {
 	} else if (_snapshot.val() == null) {
 		menuItemPageSetup("login");
 	} else {
-		
+		menuItemPageSetup("added");
 	}
 }
 

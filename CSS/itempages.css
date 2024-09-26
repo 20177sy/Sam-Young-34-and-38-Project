@@ -84,6 +84,9 @@
 		margin: 0px;
 		text-align: center;
 	}
+	#itemPurchase p {
+		text-align: center;
+	}
 	#itemPurchase button {
 		justify-self: center;
 		width: 75%;
@@ -92,6 +95,9 @@
 		color: black;
 		font-family: amaranth;
 		font-size: 18px;
+	}
+	#itemPurchase button:hover {
+		background-color: #478978;
 	}
 
 	#itemInfo {
@@ -187,6 +193,9 @@
 		text-align: center;
 		padding-top: 10px;
 		padding-bottom: 10px;
+	}
+	#itemPurchase p {
+		text-align: center;
 	}
 	#itemPurchase button {
 		height: 50px;
