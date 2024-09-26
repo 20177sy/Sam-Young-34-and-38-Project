@@ -10,66 +10,92 @@
 	.b_itemButton {
 		background-color: white;
 		text-decoration: none;
+		align-content: center;
 	}
 	.b_itemButton:hover {
 		box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.2);
 	}
 	.b_itemButton img {
 		padding: 5px;
+		max-width: 300px;
 	}
 	.b_itemButton p {
 		width: 100%;
 		text-align: center;
-		color: #478978;
+		color: black;
 	}
 
-	.itemPage{
+	#itemPage{
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 0.5fr 2fr 0.5fr;
 		grid-template-rows: 30px auto;
 		grid-gap: 0px;
 	}
 	
-	.siteTree {
-		grid-column: 1;
+	#siteTree {
+		grid-column: 1 / span 3;
 		grid-row: 1;
 		margin-top: auto;
 		margin-bottom: auto;
 	}
-	.siteTree a {
+	#siteTree a {
 		text-decoration: none;
 		color: black;
 	}
-	.siteTree a:hover {
+	#siteTree a:hover {
 		text-decoration: underline;
 	}
 
-	.itemPageContent {
-		grid-column: 1;
-		grid-row: 2;
+	#itemPageContent {
 		display: grid;
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto auto;
+		grid-column: 2;
+		grid-row: 2;
+		display: hide;
 		background-color: white;
 		border: 2px solid #478978;
 	}
 	
-	.itemImage {
+	#itemImage {
+		display: none;
 		grid-column: 1;
 		grid-row: 1;
 		padding: 15px;
 	}
-	.itemImage img {
+	#itemImage img {
 		width: 100%;
 		border: 5px solid #478978;
 	}
 
-	.itemPurchase {
+	#itemPurchase {
+		display: none;
+		grid-template-columns: 100%;
+		grid-template-rows: 150px 75px 50px;
 		grid-column: 2;
 		grid-row: 1;
 	}
+	#itemPurchase h1 {
+		margin: 0px;
+		padding-top: 40px;
+		text-align: center;
+	}
+	#itemPurchase h2 {
+		margin: 0px;
+		text-align: center;
+	}
+	#itemPurchase button {
+		justify-self: center;
+		width: 75%;
+		background-color: #84DCC6;
+		border: 2px solid #478978;
+		color: black;
+		font-family: amaranth;
+		font-size: 18px;
+	}
 
-	.itemInfo {
+	#itemInfo {
+		display: none;
 		grid-column: 1 / span 2;
 		grid-row: 2;
 		background-color: white;
@@ -94,6 +120,7 @@
 	
 	.b_itemButton img {
 		padding: 5px;
+		max-width: 300px;
 	}
 	.b_itemButton p {
 		width: 100%;
@@ -101,16 +128,82 @@
 		color: #478978;
 	}
 
-	.itemPageContent {
+	#itemPage{
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 30px auto;
+		grid-gap: 0px;
 	}
-	.itemPageContent img {
-		width: 50%;
-		justify-self: center;
+	
+	#siteTree {
+		grid-column: 1;
+		grid-row: 1;
+		margin-top: auto;
+		margin-bottom: auto;
 	}
-	.siteTree {
+	#siteTree a {
+		text-decoration: none;
+		color: black;
+	}
+	#siteTree a:hover {
+		text-decoration: underline;
+	}
+
+	#itemPageContent {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto;
+		grid-column: 1;
+		grid-row: 2;
+		display: hide;
+		background-color: white;
+		border: 2px solid #478978;
+	}
+	
+	#itemImage {
 		display: none;
+		grid-column: 1;
+		grid-row: 1;
+		padding: 15px;
+	}
+	#itemImage img {
+		width: 100%;
+		border: 5px solid #478978;
+	}
+
+	#itemPurchase {
+		display: none;
+		grid-template-columns: 100%;
+		grid-template-rows: auto auto auto;
+		grid-column: 1;
+		grid-row: 2;
+	}
+	#itemPurchase h1 {
+		margin: 0px;
+		text-align: center;
+	}
+	#itemPurchase h2 {
+		margin: 0px;
+		text-align: center;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	#itemPurchase button {
+		height: 50px;
+		width: 75%;
+		justify-self: center;
+		background-color: #84DCC6;
+		border: 2px solid #478978;
+		color: black;
+		font-family: amaranth;
+		font-size: 18px;
+	}
+
+	#itemInfo {
+		display: none;
+		grid-column: 1;
+		grid-row: 3;
+		background-color: white;
+		padding: 15px;
 	}
 }

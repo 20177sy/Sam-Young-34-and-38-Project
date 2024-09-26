@@ -8,6 +8,7 @@
 	<meta name="description" content="Hope Cafe, Lower Hutt">
 	<meta name="keywords" content="HTML, CSS, JavaScript">
 	<meta name="author" content="Sam Young">
+	<link rel="icon" type="image/x-icon" href="/Content/Images/favicon.png">
 	<link href="/CSS/style.css" rel="stylesheet" type="text/css" />
 	<link href="/CSS/itempages.css" rel="stylesheet" type="text/css" />
 	<script src="https://kit.fontawesome.com/88b27ca1cc.js" crossorigin="anonymous"></script>
@@ -63,18 +64,24 @@
 		</div>
 	</div>
 
-	<main class="itemPage">
-		<p class="siteTree"><a href="index.html">Home</a> / <a href="mains.html">Mains</a> / Main 1</p>
-		<div class="itemPageContent">
-			<div class="itemImage">
-				<img src="/Content/Images/curry.jpg">
+	<main id="itemPage">
+		<p id="siteTree"><a href="index.html">Home</a> / <a href="mains.html">Mains</a> /</p>
+		<div id="itemPageContent">
+			<p id="itemLoading">Loading...</p>
+			<div id="itemImage">
+				<img alt="Picture of Butter Chicken with rice mound in the middle" src="/Content/Images/i_main1Image.jpg">
 			</div>
-			<div class="itemPurchase">
 
+			<div id="itemPurchase">
+				<h1 id="h_main1Name"></h2>
+				<h2 id="h_main1Price"></h3>
+				<button id="b_addToCart" onclick="menuItemAddToCart();">Add To Cart</button>
+				<button id="b_favourite" onclick="menuItemAddToFavourite();">Favourite</button>
 			</div>
-			<div class="itemInfo">
+
+			<div id="itemInfo">
 				<h3>Description</h3>
-				<p id="p_main1Description">hello</p>
+				<p id="p_main1Description"></p>
 				<h3>Allergens</h3>
 				<p id="p_main1Allergens"></p>
 				<h3>Ingredients</h3>

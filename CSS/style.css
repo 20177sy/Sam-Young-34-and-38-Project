@@ -106,7 +106,7 @@ html, body {
 	}
 	nav #active {
 		background-color: #478978;
-		color: #ecf3f1;
+		color: black;
 	}
 	nav #active:hover {
 		cursor: default;
@@ -188,10 +188,10 @@ html, body {
 	}
 	#footerContent a {
 		text-decoration: none;
-		color: #ecf3f1;
+		color: black;
 	}
 	#footerContent a:hover {
-		color: #7affff;
+		color: white;
 	}
 }
 

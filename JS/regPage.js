@@ -43,7 +43,7 @@ function regContinue() {
 			sessionStorage.setItem('admin', admin.admin);
 			fb_writeRec(PROFILE, sessionStorage.getItem('UID'), userProfile);
 			fb_writeRec(ADMIN, sessionStorage.getItem('UID'), admin);
-			window.location.replace("/HTML/profile.html");
+			window.location.replace("/profile.html");
 		}
 	}
 }

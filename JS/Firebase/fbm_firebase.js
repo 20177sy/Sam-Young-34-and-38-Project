@@ -112,10 +112,10 @@ function fbm_registerCheck(_readStatus, _snapshot, _data, _error) {
 	} else if (_snapshot.val() == null) {
 		console.log(sessionStorage.getItem('UID'));
 		fb_readRec('admin', sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
-		window.location.replace("/HTML/register.html");
+		window.location.replace("/register.html");
 	} else {
 		fb_readRec(ADMIN, sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
-		window.location.replace("/HTML/profile.html");
+		window.location.replace("/profile.html");
 	}
 }
 
@@ -126,6 +126,24 @@ function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
 		console.error('%c'+_error, 'color: red');
 		alert('Read Record Error, Check Console.');
 	} else if (_snapshot.val() == true) {
+		
+	}
+}
+
+/**************************************************************/
+// fbm_menuItemRegisterCheck(_snapshot, _data)
+// checks for user in firebase, moves to new page depending on the answer
+// Input:  Recieved data and where to store it
+// Return:
+/**************************************************************/
+function fbm_menuItemRegisterCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_registerCheck2:', 'color: brown;');
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else if (_snapshot.val() == null) {
+		menuItemPageSetup("login");
+	} else {
 		
 	}
 }
@@ -147,14 +165,20 @@ function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
 	}
 }
 
-
-function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
-	console.log('%cfbm_adminCheck:', 'color: brown;');
+/**************************************************************/
+// fbm_menuItemCheck(_snapshot, _data)
+// checks for menu item in firebase, moves to new page depending on the answer
+// Input:  Recieved data and where to store it
+// Return:
+/**************************************************************/
+function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_menuItemCheck:', 'color: brown;');
 	if (_readStatus == 'failed') {
 		console.error('%c'+_error, 'color: red');
 		alert('Read Record Error, Check Console.');
-	} else if (_snapshot.val() == true) {
-
+	} else {
+		console.log('%cfbm_menuItemCheck: Success', 'color: green;');
+		menuItemProcessing(_snapshot, _data);
 	}
 }
 
