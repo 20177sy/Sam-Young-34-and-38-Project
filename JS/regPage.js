@@ -43,9 +43,10 @@ function regContinue() {
 			sessionStorage.setItem('AGE', userProfile.age);
 			sessionStorage.setItem('PHNUMBER', userProfile.phNumber);
 			sessionStorage.setItem('admin', admin.admin);
+			console.log(userProfile);
 			fb_writeRec(PROFILE, sessionStorage.getItem('UID'), userProfile);
 			fb_writeRec(ADMIN, sessionStorage.getItem('UID'), admin);
-			window.location.replace("/profile.html");
+			setTimeout(function () {window.location.replace("/profile.html");}, 2000);
 		}
 	}
 }

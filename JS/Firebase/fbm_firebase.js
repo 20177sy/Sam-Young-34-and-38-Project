@@ -60,13 +60,13 @@ function fbm_initialise() {
 	// PLACE YOUR CONFIG FROM THE FIREBASE CONSOLE BELOW <========
 	const FIREBASECONFIG = {
 		apiKey: "AIzaSyAST0rg5FDJXYCKjDpFEgqESsa051n0WF4",
-    authDomain: "samyoung-as34and38-cafe.firebaseapp.com",
-    databaseURL: "https://samyoung-as34and38-cafe-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "samyoung-as34and38-cafe",
-    storageBucket: "samyoung-as34and38-cafe.appspot.com",
-    messagingSenderId: "438434697303",
-    appId: "1:438434697303:web:9eadd31445d871cfa95312",
-    measurementId: "G-PEG0VGLDL0"
+    	authDomain: "samyoung-as34and38-cafe.firebaseapp.com",
+    	databaseURL: "https://samyoung-as34and38-cafe-default-rtdb.asia-southeast1.firebasedatabase.app",
+    	projectId: "samyoung-as34and38-cafe",
+    	storageBucket: "samyoung-as34and38-cafe.appspot.com",
+    	messagingSenderId: "438434697303",
+   		appId: "1:438434697303:web:9eadd31445d871cfa95312",
+    	measurementId: "G-PEG0VGLDL0"
 	};
 
 	// Check if firebase already initialised
@@ -118,11 +118,11 @@ function fbm_registerCheck(_readStatus, _snapshot, _data, _error) {
 		alert('Read Record Error, Check Console.');
 	} else if (_snapshot.val() == null) {
 		console.log(sessionStorage.getItem('UID'));
-		fb_readRec('admin', sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
-		window.location.replace("/register.html");
+		//fb_readRec('admin', sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
+		setTimeout(function () {window.location.replace("/register.html");}, 2000);
 	} else {
-		fb_readRec(ADMIN, sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
-		window.location.replace("/profile.html");
+		//fb_readRec(ADMIN, sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
+		setTimeout(function () {window.location.replace("/profile.html");}, 2000);
 	}
 }
 
@@ -132,8 +132,6 @@ function fbm_adminCheck(_readStatus, _snapshot, _data, _error) {
 	if (_readStatus == 'failed') {
 		console.error('%c'+_error, 'color: red');
 		alert('Read Record Error, Check Console.');
-	} else if (_snapshot.val() == true) {
-		
 	}
 }
 

@@ -1,2 +1,3 @@
 i_homeImage.jpg is sourced from https://undefined.photos/photo-gallery/cabinet-food-ideas-for-cafe
 i_main1Image.jpg is sourced from https://www.needpix.com/photo/1821863/food-indian-curry-healthy-cooking-corn-delicious-spices-dinner
+i_main2Image.jpg, i_main3Image.jpg, and i_side1Image.jpg were generated with Adobe Firefly
