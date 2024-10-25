@@ -1,10 +1,21 @@
 /* CSS for Large Screens */
 @media screen and (min-width:769px) {
-	main {
+	#mains {
+		display: grid;
+		grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+		grid-template-rows: auto;
+		grid-gap: 15px;
+	}
+	#sides, #kids, #drinks, #desserts {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		grid-template-rows: auto;
 		grid-gap: 15px;
+	}
+
+	.s_itemSpacer {
+		grid-column: 1;
+		grid-row: 1;
 	}
 	
 	.b_itemButton {

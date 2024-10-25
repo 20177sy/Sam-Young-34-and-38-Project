@@ -178,6 +178,25 @@ html, body {
 		cursor: pointer;
 	}
 
+	#cartTable {
+		margin-top: 30px;
+		font-size: 16px;
+	}
+	#b_orderButton {
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		height: 26px;
+		border: 1px solid black;
+		border-radius: 5px;
+		font-size: 18px;
+		background-color: #ecf3f1;
+		visibility: hidden;
+	}
+	#b_orderButton:hover {
+		background-color: #e3e3e3;
+	}
+
 	#img_location {
 		max-width: 600px;
 	}

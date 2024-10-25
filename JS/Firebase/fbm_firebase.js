@@ -13,8 +13,10 @@ console.log('%c' + MODULENAME + ': ', 'color: blue;');
 // database variables
 const PROFILE = "userProfile";
 const ADMIN = "admin";
-const MENU = "menuItems"
+const MENU = "menuItems";
+const ORDERS = "orders";
 
+var userCart = [];
 var loginStatus = ' ';
 var readStatus  = ' ';
 var writeStatus = ' ';
@@ -122,6 +124,9 @@ function fbm_registerCheck(_readStatus, _snapshot, _data, _error) {
 		setTimeout(function () {window.location.replace("/register.html");}, 2000);
 	} else {
 		//fb_readRec(ADMIN, sessionStorage.getItem('UID'), dbData, fbm_adminCheck);
+		userCart.push({uid: sessionStorage.getItem('UID')});
+		const jsonArray = JSON.stringify(userCart);
+		sessionStorage.setItem('userCart', jsonArray);
 		setTimeout(function () {window.location.replace("/profile.html");}, 2000);
 	}
 }
@@ -161,9 +166,13 @@ function fbm_menuItemRegisterCheck(_readStatus, _snapshot, _data, _error) {
 /**************************************************************/
 function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
 	console.log('%cfbm_menuItemCheck:', 'color: brown;');
+	console.log(_snapshot);
 	if (_readStatus == 'failed') {
 		console.error('%c'+_error, 'color: red');
 		alert('Read Record Error, Check Console.');
+	} else if(_snapshot.val() == null) {
+		console.log('%c Menu Item Doesnt Exist', 'color: red');
+		alert('The menu item that you selected is no longer available.');
 	} else {
 		console.log('%cfbm_menuItemCheck: Success', 'color: green;');
 		menuItemProcessing(_snapshot, _data);
@@ -171,19 +180,41 @@ function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
 }
 
 /**************************************************************/
-// fbm_menuItemCheck(_snapshot, _data)
-// checks for menu item in firebase, moves to new page depending on the answer
+// fbm_cartRegisterCheck(_snapshot, _data)
+// checks for user in firebase, moves to new page depending on the answer
 // Input:  Recieved data and where to store it
 // Return:
 /**************************************************************/
-function fbm_menuItemCheck(_readStatus, _snapshot, _data, _error) {
-	console.log('%cfbm_menuItemCheck:', 'color: brown;');
+function fbm_cartRegisterCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_registerCheck2:', 'color: brown;');
 	if (_readStatus == 'failed') {
 		console.error('%c'+_error, 'color: red');
 		alert('Read Record Error, Check Console.');
+	} else if (_snapshot.val() == null) {
+		scriptCartPageload("login");
 	} else {
-		console.log('%cfbm_menuItemCheck: Success', 'color: green;');
-		menuItemProcessing(_snapshot, _data);
+		scriptCartPageload("loggedin");
+	}
+}
+
+/**************************************************************/
+// fbm_cartOrdersCheck(_snapshot, _data)
+// checks for orders in firebase, moves to new page depending on the answer
+// Input:  Recieved data and where to store it
+// Return:
+/**************************************************************/
+function fbm_cartOrdersCheck(_readStatus, _snapshot, _data, _error) {
+	console.log('%cfbm_registerCheck2:', 'color: brown;');
+	let orders = _snapshot.val();
+	if (_readStatus == 'failed') {
+		console.error('%c'+_error, 'color: red');
+		alert('Read Record Error, Check Console.');
+	} else if (orders == null) {
+		let orderNumbers = 1;
+		scriptCartProcess(orderNumbers);
+	} else {
+		let orderNumbers = orders.length
+		scriptCartProcess(orderNumbers);
 	}
 }
 

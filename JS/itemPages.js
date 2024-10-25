@@ -9,6 +9,7 @@ kids = kids
 
 var menuItemRef
 var menuItemFav
+var menuItemATC
 
 function menuItemRead(_key) {
 	console.log('%cmenuItemRead:'+_key, 'color: brown;');
@@ -25,7 +26,7 @@ function menuItemProcessing(_snapshot, _data) {
 	console.log('%cmenuItemProcessing:', 'color: brown;');
 	_data = _snapshot.val();
 	document.getElementById("h_"+menuItemRef+"Name").innerHTML = _data.name;
-	document.getElementById("h_"+menuItemRef+"Price").innerHTML = _data.price;
+	document.getElementById("h_"+menuItemRef+"Price").innerHTML = '$'+_data.price;
 	document.getElementById("p_"+menuItemRef+"Description").innerHTML = _data.desc;
 	document.getElementById("p_"+menuItemRef+"Allergens").innerHTML = _data.algy;
 	document.getElementById("p_"+menuItemRef+"Ingredients").innerHTML = _data.ingr;
@@ -33,11 +34,17 @@ function menuItemProcessing(_snapshot, _data) {
 	document.getElementById("itemImage").style.display = "inline";
 	document.getElementById("itemPurchase").style.display = "grid";
 	document.getElementById("itemInfo").style.display = "inline";
+	menuItemATC = {itemName: _data.name, itemPrice: _data.price};
 }
 
 function menuItemAddToCart() {
 	console.log('%cmenuItemAddToCart:', 'color: brown;');
-	alert("This operation is currently not available.");
+	const str = sessionStorage.getItem('userCart');
+	userCart = JSON.parse(str);
+	menuItemATC.itemQuantity = prompt(menuItemATC.itemName+' added to cart \nQuantity:');
+	userCart.push(menuItemATC);
+	const jsonArray = JSON.stringify(userCart);
+	sessionStorage.setItem('userCart', jsonArray);
 }
 
 function menuItemAddToFavourite(_itemType, _item) {

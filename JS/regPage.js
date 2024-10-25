@@ -44,6 +44,9 @@ function regContinue() {
 			sessionStorage.setItem('PHNUMBER', userProfile.phNumber);
 			sessionStorage.setItem('admin', admin.admin);
 			console.log(userProfile);
+			userCart.push({uid: userProfile.uid});
+			const jsonArray = JSON.stringify(userCart);
+			sessionStorage.setItem('userCart', jsonArray);
 			fb_writeRec(PROFILE, sessionStorage.getItem('UID'), userProfile);
 			fb_writeRec(ADMIN, sessionStorage.getItem('UID'), admin);
 			setTimeout(function () {window.location.replace("/profile.html");}, 2000);
